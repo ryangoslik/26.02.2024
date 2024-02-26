@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+html{
+    padding: 0;
+    margin: 0;
+    font-family: Bungee Spice;
+    background-color: wheat;
+}
+header{
+    background-color:aqua;
+    border: black 2px solid;
+    padding-top: 25px;
+   padding-bottom: 25px;
+    display: flex;
+    justify-content: center;
+}
+main{
+    box-shadow: 10px 3px 10px 3px green;
+    background-color:darkgrey;
+    margin-left: 10%;
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    min-width: 80%;
+    width: auto;
+    min-height: 880px;
+    height: auto;
+}
+button{
+    padding: 5px;
+    border-radius: 25%;
+}
+.sidebara{
+    box-shadow: orangered 0px 0px 10px 4px; 
+    background-color:orange ;
+    min-width:180px ;
+    max-width: 180px;
+    min-height:100px ; 
+    height: auto;
+    width: auto;
+border: solid orangered 2px;
+float: left;
+padding-left: 5px;
+};
+

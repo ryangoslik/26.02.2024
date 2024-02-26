@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+Ile:<input id="ile" type="number"> 
+a:<input id="a" type="number">
+b:<input id="b" type="number">
+R:<input id="r" type="number">
+G:<input id="g" type="number">
+B:<input id="b1" type="number">
+<button onclick="funkcja()">Generuj</button>
+<label for="myCheck">Checkbox:</label> 
+<input type="checkbox" id="box">
+<input type="number" id="lot">loteria zgadnij liczba
+    </header>
+    <div class="sidebara">
+        <div class="counter" id="counter">Licznik:</div>
+    </div>
+<main id="main" style="width: 1200px; display: flex; flex-wrap: wrap;"></main>
+
+
+
+    <script>
+        
+
+        function funkcja(){
+            var ilosc = parseInt(document.getElementById("ile").value);
+            var a = parseInt(document.getElementById("a").value);
+            var b = parseInt(document.getElementById("b").value);
+            var r = parseInt(document.getElementById("r").value);
+            var g = parseInt(document.getElementById("g").value);
+            var b1 = parseInt(document.getElementById("b1").value);
+            document.getElementById("main").textContent = " ";
+
+            let z=0;
+            for(let i=0; i<ilosc ;i++, r++, g++, b1++){
+        var element = document.createElement("div");
+        var trojkat = document.createElement("div");
+        trojkat.style.height = b + 'px';
+        trojkat.style.width = a + 'px';
+        trojkat.style.backgroundColor = "red";
+        trojkat.style.marginTop="-24px";
+        trojkat.style.border = "solid black 5px";
+        trojkat.style.clipPath = "polygon(50% 0%, 0% 100%, 100% 100%)";
+        element.style.height = b + 'px';
+        element.style.width = a + 'px';
+        element.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b1 + ')';
+        element.style.border = "solid black 5px";
+        main.appendChild(element);
+        element.textContent = i + 1;
+        
+        var checkBox = document.getElementById("box");
+        if (checkBox.checked){
+    if(i%2 ==0){
+        if(i%7!= 0){
+            element.appendChild(trojkat)
+        }
+    }
+        
+    } 
+        if(i%7 ==0){
+            z++;
+            element.style.borderRadius = "100%";
+        }
+        document.getElementById("counter").innerText = z;
+        }
+        console.clear()
+            let liczba;
+            let proba = 0;
+            do{
+                liczba = Math.floor(Math.random()*5) +1;
+                proba++
+                console.log(`Próba ${proba}: ${liczba}`)
+            }while(liczba!==3);
+            console.log(`znaleziono liczbe 3 po ${proba} próbach.`);
+} 
+
+
+   
+
+    //var element = document.createElement("div");
+   // div.style.background = 
+
+    </script>
+</body>
+</html>
